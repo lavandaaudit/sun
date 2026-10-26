@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBONARIUM SUNSET</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery-fix.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sitdeck-container">
+        <!-- Header -->
+        <header class="top-hud">
+            <div class="logo-area">
+                <h1>IBONARIUM <span>SUNSET</span></h1>
+                <div class="status-indicator">
+                    <span class="pulse"></span> LIVE FEED ACTIVE
+                </div>
+            </div>
+            <div class="global-stats" id="solar-stats">
+                <!-- Solar stats will be injected here -->
+                <div class="stat-box">
+                    <span class="label">KP INDEX</span>
+                    <span class="value" id="kp-val">--</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">SOLAR WIND</span>
+                    <span class="value" id="wind-val">-- km/s</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">X-RAY FLARES</span>
+                    <span class="value" id="flare-val">--</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Video Player Section -->
+            <section class="video-section">
+                <div class="video-wrapper">
+                    <div class="glass-frame">
+                        <div id="video-container">
+                            <div class="loading-feed">ІНІЦІАЛІЗАЦІЯ ПОТОКУ...</div>
+                        </div>
+                        <div class="video-overlay-hud" id="video-hud">
+                            <div class="hud-top-left" id="current-location">--</div>
+                            <div class="hud-top-right" id="current-temp">--°C</div>
+                            <div class="hud-bottom-left" id="sunset-countdown">--</div>
+                            <div class="hud-fullscreen-btn" id="fs-btn">⛶</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Location Selector Section -->
+            <section class="locations-section">
+                <div class="section-header">
+                    <h2>🌅 ТЕРМІНАТОР:</h2>
+                    <div class="line-deco"></div>
+                </div>
+                <div class="locations-grid" id="locations-grid">
+                    <!-- Location cards injected here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section glass-frame" style="margin-top: 20px;">
+            <div class="section-header">
+                <h2>ОСТАННІ ЗАХОДИ СОНЦЯ У СВІТІ (LIVE)</h2>
+                <div class="line-deco"></div>
+            </div>
+            <div class="gallery-grid" id="gallery-grid">
+                <div class="loading-feed" style="position: relative; width: 100%; grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--neon-blue);">ЗАВАНТАЖЕННЯ ФОТО...</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Photo Modal -->
+    <div id="photo-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <img id="modal-img" src="" alt="Enlarged Sunset">
+            <div class="modal-caption" id="modal-caption">--</div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/solar.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>
